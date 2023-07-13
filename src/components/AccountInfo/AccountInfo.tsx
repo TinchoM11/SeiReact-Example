@@ -20,7 +20,9 @@ const AccountInfo = () => {
 	useEffect(() => {
 		const fetchBalances = async () => {
 			if (queryClient && walletAccount) {
-				const { balances } = await queryClient.cosmos.bank.v1beta1.allBalances({ address: walletAccount.address });
+				// Hardcoded to see balancess
+				const { balances } = await queryClient.cosmos.bank.v1beta1.allBalances({ address: "sei1eexg4ys5zp2qv4f5ytut0qlrtx65tk6rcj9skh" });
+				// const { balances } = await queryClient.cosmos.bank.v1beta1.allBalances({ address: walletAccount.address });
 				return balances as BalanceResponseType[];
 			}
 			return [];
